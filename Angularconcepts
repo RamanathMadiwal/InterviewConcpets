@@ -1,0 +1,73 @@
+Why compile with AOT?
+Faster rendering
+
+With AOT, the browser downloads a pre-compiled version of the application.
+ The browser loads executable code so it can render the application immediately,
+ without waiting to compile the app first.
+
+Fewer asynchronous requests
+
+The compiler inlines external HTML templates and CSS style sheets within the
+application JavaScript, eliminating separate ajax requests for those source files.
+
+Smaller Angular framework download size
+
+There's no need to download the Angular compiler if the app is already compiled.
+The compiler is roughly half of Angular itself, so omitting it dramatically reduces the application payload.
+
+Detect template errors earlier
+
+The AOT compiler detects and reports template binding errors during the build
+step before users can see them.
+
+Better security
+
+AOT compiles HTML templates and components into JavaScript files long before
+they are served to the client. With no templates to read and no risky client-side HTML
+or JavaScript evaluation, there are fewer opportunities for injection attacks.
+
+
+What is ComponentFactoryResolver used for?
+
+A: A class that is used to create dynamic components - it produces a ComponentFactory for a particular component which can then be loaded into view via a createComponent on ViewContainerRef.
+
+
+What are some differences between Angular 2 and 4?
+
+A: Improvements in AOT, allowing the "else" clause in ngIf, support for TypeScript 2.1, breaking out the animations package...
+
+What are some security related features built in to the Angular framework?
+
+A: Sanitation, to prevent cross site scripting. Built-in support in the HttpClient to prevent cross-site request forgery.
+
+
+What are some changes introduced in Angular 4?
+
+A: Introduction of the else clause in ngIf; splitting out of animation package; support for TypeScript 2.1; improvements around AOT.
+
+What are some changes introduced in Angular 5?
+
+A: New version of HttpClient; build optimizer; Universal State Transfer API
+(allows sharing state of app between server and client easily);
+support for TypeScript 2.3.
+
+What is the possible order of lifecycle hooks in Angular?
+
+A: ngOnChanges, ngOnInit, ngDoCheck, ngAfterContentInit, ngAfterContentChecked, ngAfterViewInit, ngAfterViewChecked, ngOnDestroy.
+
+
+What is a pure pipe?
+
+A: A pipe that is only executed when Angular detects a pure change to the input value (e.g. new primitive object or new object reference).
+
+What is an impure pipe?
+
+A: A pipe that is executed during every component change detection cycle (i.e., often – every keystroke, mouse move).
+
+What is an async pipe?
+
+A: An impure pipe that accepts a promise or observable as input and eventually returns emitted values.
+
+What kind of data can be used with async pipe?
+
+A: Stateful, asynchronous
